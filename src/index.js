@@ -15,5 +15,10 @@ root.render(
 
 const carContainer = document.getElementById('demo');
 const demo = createRoot(carContainer);
-demo.render(<Car color="red" brand="Ford" />);
+demo.render(
+  <>
+    <Car color="red" brand="Ford" year={1999} />
+    <Car color="white" brand="indica" year={2022} />
+  </>
+);
 
