@@ -1,10 +1,14 @@
 import React from "react";
 import "./style.css";
 import Car from './Car';
+import { useState } from "react";
 
 // const App = () => {
 function App() {
   const names = ["tamil","AP"];
+ // let name = "tamil";
+ const [name, setName] = useState("tamil");
+
   const cars = [
     {
       color: "red",
@@ -25,12 +29,22 @@ function App() {
   const onbtnclick = () => {
     alert("hi");
   }
+  const textinputchanged = (value) => {
+    setName(value);
+    console.log(value);
+  }
   return (
     <div>
-      {names.map(name => <h1>Hello {name}!</h1>)}
+      {names.map(name => <h1 key={name}>Hello {name}!</h1>)}
       <p>Start React :)</p>
       <button onClick={onbtnclick}>Click me</button>
-      {cars.map(car => <Car color={car.color} brand={car.brand} year={car.year} />)}
+      {cars.map(car => <Car key={car.color} color={car.color} brand={car.brand} year={car.year} />)}
+      <input
+        type="text" 
+        value={name}
+        onChange={(e) => textinputchanged(e.target.value)}
+      />
+      <h1>{name}</h1>
     </div>
   );
 }
