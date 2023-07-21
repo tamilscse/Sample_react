@@ -1,7 +1,8 @@
 import React from "react";
 import "./style.css";
 
-export default function App() {
+// const App = () => {
+function App() {
   let name = ["tamil","AP"]; 
   return (
     <div>
@@ -10,3 +11,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App;
