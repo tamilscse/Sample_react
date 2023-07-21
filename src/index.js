@@ -15,5 +15,5 @@ root.render(
 
 const carContainer = document.getElementById('demo');
 const demo = createRoot(carContainer);
-demo.render(<Car />);
+demo.render(<Car color="red" brand="Ford" />);
 
